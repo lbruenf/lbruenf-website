@@ -14,9 +14,15 @@ comments: true
 	{% for post in paginator.posts %}
 	<div class="list-group-item">
 	<a href="{{ post.url }}">
-		<h4 class="list-group-item-heading">{{ post.title }}</h4>
-		<h6 class="list-group-item-heading">{{ post.published | date: '%B %d,
-			%Y' }} | (Atualizado em: {{ post.date | date: '%B %d, %Y' }})</h6></a>
+		  <h4 class="list-group-item-heading">{{ post.title }}</h4>
+      {% assign months = "janeiro,fevereiro,março,abril,maio,junho,julho,agosto,setembro,outubro,novembro,dezembro" | split: "," %}
+      {% assign month_number = post.published | date: "%-m" | minus: 1 %}
+		  <h6 class="list-group-item-heading">
+
+          <strong> {{ post.published | date: "%-d" }} de {{ months[month_number] }} de {{ post.published | date: "%Y" }} </strong>
+
+
+      </h6></a>
 		{% for tag in post.tags %}
 		<a class="label label-default" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
 		{% endfor %}
