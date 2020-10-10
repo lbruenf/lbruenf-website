@@ -28,12 +28,16 @@ comments: true
 		{% endfor %}
 		{% if post.noimage %}
 		{% else %}
+    <a href="{{ post.url }}">
 		<img
 			alt="{{ post.title }}"
-			src="/assets/images/{{post.id}}/top.jpg" class="img-responsive">
+			     src="/assets/images/{{post.id}}/top.jpg" class="img-responsive">
+    </a>
 		{% endif %}
-		<p>{{ post.excerpt | strip_html | slice: 0, 100}}...</p>
-		<a href="{{ post.url }}">Ler mais...</a>
+		{{ post.excerpt | strip_html | slice: 0, 300}}...
+    <br>
+    <a href="{{ post.url }}">
+		Ler mais...</a>
 
 	</div>
 	{% endfor %}
