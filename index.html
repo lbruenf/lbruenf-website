@@ -29,10 +29,10 @@ comments: true
 		{% if post.noimage %}
 		{% else %}
     <a href="{{ post.url }}">
-		<img
+		<img class="blog-image"
 			alt="{{ post.title }}"
 			     src="/assets/images/{{post.id}}/top.jpg" class="img-responsive">
-    </a>
+    </a><br>
 		{% endif %}
 		{{ post.excerpt | strip_html | slice: 0, 300}}...
     <br>
