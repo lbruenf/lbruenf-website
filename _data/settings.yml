@@ -13,8 +13,8 @@ menu:
         link: /projects/hansen
       - name: Toxoplasmose
         link: /projects/toxoplasma
-  - name: Ensino a Distância
-    link: /ead
+  #- name: Ensino a Distância
+  #  link: /ead
   - name: Blog
     link: /
   - name: "#Tags"
